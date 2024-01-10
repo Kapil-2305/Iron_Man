@@ -20,15 +20,15 @@ const Ironman = (props) => {
 
     return (
         <group {...props} dispose={null}>
-        <group rotation={[-Math.PI / 2, 0, 0]}>
-            <mesh geometry={nodes.Object_2.geometry} material={materials['default']} scale={0.0013} />
-            <mesh geometry={nodes.Object_3.geometry} material={materials['default']} scale={0.0013} />
-            <mesh geometry={nodes.Object_4.geometry} material={materials['default']} scale={0.0013} />
-        </group>
+            <group rotation={[ 4.5, -0.07, 0.35]}>
+                <mesh geometry={nodes.Object_2.geometry} material={materials['default']} scale={0.0008} />
+                <mesh geometry={nodes.Object_3.geometry} material={materials['default']} scale={0.0008} />
+                <mesh geometry={nodes.Object_4.geometry} material={materials['default']} scale={0.0008} />
+            </group>
         </group>
     )
 }
 
 export default Ironman;
 
-useGLTF.preload('./iron_man/ironman.gltf')
+useGLTF.preload('./iron_man/ironman.gltf');

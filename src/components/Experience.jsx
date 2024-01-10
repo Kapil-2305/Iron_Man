@@ -6,14 +6,14 @@ import Ironman from "./Ironman"
 const Experience = () => {
     return (
         <>
-            <ambientLight />
+            <ambientLight intensity={2.8}/>
             <directionalLight position={[-5, 5, 5]} castShadow shadow-mapSize={1024} />
             <OrbitControls />
-            <group position={[0, -2, 0]}>
+            <group position={[0, -1, 0]}>
                 <Ironman />
             </group>
         </>
     )
 }
 
-export default Experience
+export default Experience;

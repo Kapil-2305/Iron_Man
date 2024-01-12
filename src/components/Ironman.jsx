@@ -9,9 +9,7 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 const Ironman = (props) => {
-    const { nodes, materials, animations } = useGLTF("./iron_man/ironman.gltf");
-
-    console.log(animations)
+    const { nodes, materials } = useGLTF("./iron_man/ironman.gltf");
 
     const {animations: JabCross} = useFBX("./iron_man/animations/Jab Cross.fbx");
     const {animations: JumpingDown} = useFBX("./iron_man/animations/Jumping Down.fbx");
@@ -25,16 +23,16 @@ const Ironman = (props) => {
 
     const avatarRef = useRef();
 
-    const {animation} = useControls({animation: {value: JabCross[0].name, options: {JabCross: JabCross[0].name, JumpingDown: JumpingDown[0].name, CrouchToStand: CrouchToStand[0].name, SillyDancing: SillyDancing[0].name}}});
-    const {position} = useControls({position: {value: [0, 0, 0], step: 0.1}});
-    const {rotation} = useControls({rotation: {value: [0, 0, 0], step: 0.1}});
+    const { animation } = useControls({animation: {value: JabCross[0].name, options: {JabCross: JabCross[0].name, JumpingDown: JumpingDown[0].name, CrouchToStand: CrouchToStand[0].name, SillyDancing: SillyDancing[0].name}}});
+    const { position } = useControls({position: {value: [0, 0, 0], step: 0.1}});
+    const { rotation } = useControls({rotation: {value: [0, 0, 0], step: 0.1}});
 
-    const {actions} = useAnimations([JabCross[0], JumpingDown[0], CrouchToStand[0], SillyDancing[0]], avatarRef);
+    const { actions } = useAnimations([JabCross[0], JumpingDown[0], CrouchToStand[0], SillyDancing[0]], avatarRef);
 
     useEffect(() => {
         actions[animation].reset().fadeIn(0.5).play();
         return () => {
-            actions[animation].fadeOut(0.5).stop();
+            actions[animation].reset().fadeOut(0.5);
         }
     }, [animation]);
 

@@ -22,13 +22,15 @@ const Kapil = (props) => {
     reaction[0].name = "Reaction";
     idle[0].name = "Idle";
 
-    const { animation } = useControls({animation: {value: idle[0].name, options: {Idle: idle[0].name, SillyDancing: sillyDancing[0].name, Punching: punching[0].name, Reaction: reaction[0].name}}});
+    // const { animation } = useControls({animation: {value: idle[0].name, options: {Idle: idle[0].name, SillyDancing: sillyDancing[0].name, Punching: punching[0].name, Reaction: reaction[0].name}}});
 
-    const { headFollow, cursorFollow, wireframe } = useControls({headFollow: false, cursorFollow: false, wireframe: false});
+    // const { headFollow, cursorFollow, wireframe } = useControls({headFollow: false, cursorFollow: false, wireframe: false});
 
     const anims = useMemo(() => [idle[0], sillyDancing[0], punching[0], reaction[0]], []);
     
     const { actions } = useAnimations(anims, group);
+
+    const animation = "Idle";
 
     useEffect(()=>{
         actions[animation].reset().fadeIn(0.5).play();
@@ -37,21 +39,21 @@ const Kapil = (props) => {
         }
     }, [animation]);
 
-    useFrame((state, delta) => {
-        if(headFollow){
-            group.current.getObjectByName("Head").lookAt(state.camera.position);
-        }
-        if(cursorFollow){
-            const target = new THREE.Vector3(state.mouse.x, state.mouse.y, 1);
-            group.current.getObjectByName("Spine").lookAt(target);
-        }
-    });
+    // useFrame((state, delta) => {
+    //     if(headFollow){
+    //         group.current.getObjectByName("Head").lookAt(state.camera.position);
+    //     }
+    //     if(cursorFollow){
+    //         const target = new THREE.Vector3(state.mouse.x, state.mouse.y, 1);
+    //         group.current.getObjectByName("Spine").lookAt(target);
+    //     }
+    // });
 
-    useEffect(()=>{
-        Object.values(materials).forEach((material)=>{
-            material.wireframe = wireframe;
-        });
-    }, [wireframe]);
+    // useEffect(()=>{
+    //     Object.values(materials).forEach((material)=>{
+    //         material.wireframe = wireframe;
+    //     });
+    // }, [wireframe]);
 
     return (
         <group {...props} dispose={null} ref={group}>

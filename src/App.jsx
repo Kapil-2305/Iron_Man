@@ -10,7 +10,7 @@ import Project from "./components/Project";
 import Contact from "./components/Contact";
 
 const App = () => {
-    const {color} = useControls({color: "#8f8fad"});
+    // const {color} = useControls({color: "#8f8fad"});
     const [pageNo, setPageNo] = useState(0);
     
     return (

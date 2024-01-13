@@ -16,15 +16,17 @@ const Kapil = (props) => {
     const {animations : sillyDancing } = useFBX("/Silly Dancing.fbx");
     const {animations : punching } = useFBX("/Punching.fbx");
     const {animations : reaction } = useFBX("/Reaction.fbx");
+    const {animations : idle } = useFBX("/Idle.fbx");
     sillyDancing[0].name = "SillyDancing";
     punching[0].name = "Punching";
     reaction[0].name = "Reaction";
+    idle[0].name = "Idle";
 
-    const { animation } = useControls({animation: {value: sillyDancing[0].name, options: {SillyDancing: sillyDancing[0].name, Punching: punching[0].name, Reaction: reaction[0].name}}});
+    const { animation } = useControls({animation: {value: idle[0].name, options: {Idle: idle[0].name, SillyDancing: sillyDancing[0].name, Punching: punching[0].name, Reaction: reaction[0].name}}});
 
     const { headFollow, cursorFollow, wireframe } = useControls({headFollow: false, cursorFollow: false, wireframe: false});
 
-    const anims = useMemo(() => [sillyDancing[0], punching[0], reaction[0]], []);
+    const anims = useMemo(() => [idle[0], sillyDancing[0], punching[0], reaction[0]], []);
     
     const { actions } = useAnimations(anims, group);
 

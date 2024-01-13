@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const App = () => {
     const {color} = useControls({color: "#8f8fad"});
-    const [section, setSection] = useState(0);
+    const [pageNo, setPageNo] = useState(0);
     
     return (
         <>

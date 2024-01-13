@@ -27,12 +27,15 @@ const Ironman = (props) => {
     const { position } = useControls({position: {value: [0, 0, 0], step: 0.1}});
     const { rotation } = useControls({rotation: {value: [0, 0, 0], step: 0.1}});
 
-    const { actions } = useAnimations([JabCross[0], JumpingDown[0], CrouchToStand[0], SillyDancing[0]], avatarRef);
+    const { actions, names } = useAnimations([JabCross[0], JumpingDown[0], CrouchToStand[0], SillyDancing[0]], avatarRef);
+    console.log(names);
 
     useEffect(() => {
-        actions[animation].reset().fadeIn(0.5).play();
+        console.log(animation);
+        console.log(names);
+        actions[names[0]].reset().fadeIn(0.5).play();
         return () => {
-            actions[animation].reset().fadeOut(0.5);
+            actions[names[0]].reset().fadeOut(0.5);
         }
     }, [animation]);
 

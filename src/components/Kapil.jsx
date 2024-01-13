@@ -30,7 +30,7 @@ const Kapil = (props) => {
     
     const { actions } = useAnimations(anims, group);
 
-    const animation = "Idle";
+    const animation = "SillyDancing";
 
     useEffect(()=>{
         actions[animation].reset().fadeIn(0.5).play();

@@ -16,7 +16,7 @@ const App = () => {
     
     return (
         <>
-            <Canvas camera={{ position: [0, 1.8, 4], fov: 50 }} shadows>
+            <Canvas camera={{ position: [1.2, 1.8, 4], fov: 50 }} shadows>
                 <color attach="background" args={["#8f8fad"]} />
                 <ScrollControls pages={4} damping={0.1}>
                     <Scroll>

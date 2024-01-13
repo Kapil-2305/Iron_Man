@@ -13,11 +13,13 @@ const Experience = () => {
     return (
         <>
             <Background />
-            <ambientLight intensity={2.8}/>
+            <ambientLight intensity={1.5}/>
             <directionalLight position={[-5, 5, 5]} castShadow shadow-mapSize={1024} />
-            <group>
+            <motion.group
+                ref={characterGroup}
+            >
                 <Kapil />
-            </group>
+            </motion.group>
         </>
     )
 }

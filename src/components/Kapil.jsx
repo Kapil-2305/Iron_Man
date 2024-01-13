@@ -25,7 +25,7 @@ const Kapil = (props) => {
     useEffect(()=>{
         actions[animation].reset().fadeIn(0.5).play();
         return ()=>{
-            actions[animation].reset().fadeOut(0.5).stop();
+            actions[animation].reset().fadeOut(0.5);
         }
     }, [animation]);
 

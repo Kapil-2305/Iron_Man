@@ -8,6 +8,7 @@ import Section from "./components/Section";
 import About from "./components/About";
 import Project from "./components/Project";
 import Contact from "./components/Contact";
+import Skill from "./components/Skill";
 
 const App = () => {
     // const {color} = useControls({color: "#8f8fad"});
@@ -26,6 +27,9 @@ const App = () => {
                     <Scroll html>
                         <Section>
                             <About />
+                        </Section>
+                        <Section>
+                            <Skill />
                         </Section>
                         <Section>
                             <Project />

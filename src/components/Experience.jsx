@@ -8,7 +8,7 @@ const Experience = () => {
             <Background />
             <ambientLight intensity={2.8}/>
             <directionalLight position={[-5, 5, 5]} castShadow shadow-mapSize={1024} />
-            <group position={[0, -1, 0]}>
+            <group position={[1.8, -1, 0]}>
                 <Kapil />
             </group>
         </>
